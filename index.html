@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- تعريف نوع المستند HTML5 -->
+<html lang="ar" dir="rtl">
+<!-- بدء وثيقة HTML مع تحديد اللغة (العربية) واتجاه النص من اليمين لليسار -->
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- تحديد ترميز الصفحة لتكون UTF-8 لدعم الأحرف العربية -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- لضبط عرض الصفحة تلقائيًا حسب حجم شاشة الجهاز (هام للتجاوب مع الأجهزة المختلفة) -->
+
+  <title>محمد نواف القحطاني</title>
+  <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+
+  <link rel="stylesheet" href="styles.css"/>
+  <!-- ربط ملف CSS خارجي لتنسيق الصفحة -->
+
+  <script>
+    /* كائن يحتوي على النصوص باللغتين العربية والانجليزية لاستخدام التبديل بين اللغات */
+    const translations = {
+      ar: { // النصوص باللغة العربية
+        name: "محمد نواف القحطاني",
+        title: "نظم المعلومات",
+        phoneText: 'الهاتف: <a href="tel:+966566833453">+966 56 683 3453</a>',
+        
+whatsappText: 'واتساب: <a href="https://wa.me/966566833453" target="_blank" rel="noopener">+966 56 683 3453</a>',
+linkedinText: 'لينكد إن:  <a href=" http://www.linkedin.com/in/%D9%85%D8%AD%D9%85%D8%AF-%D9%86%D9%88%D8%A7%D9%81-%D8%B3%D8%B9%D8%B1%D8%A7%D9%86-ba0aaa33a" target="_blank" rel="noopener">linkedin.com</a>',
+
+        emailText: 'البريد الإلكتروني: <a href="mailto:mbnq2002@gmail.com">mbnq2002@gmail.com</a>',
+        summaryTitle: "نبذة عني",
+        summaryText: "تخصصي نظم المعلومات، ولدي خبرة عملية في تطوير الويب، والدعم الفني، وإدارة الأنظمة. عملت على مشروع يربط المزارعين بالعملاء، واكتسبت من خلاله مهارات في العمل الجماعي وتنظيم المهام.",
+        educationTitle: "تعليمي",
+        educationText: "<strong>بكالوريوس نظم معلومات</strong><br>كلية علوم الحاسب، جامعة الملك خالد – أبها، السعودية",
+        certificationsTitle: "شهاداتي والدورات",
+        certifications: [
+          'اساسيات البيانات من IBM – <a href="https://www.credly.com/badges/6d783277-d59b-4e74-b68c-e37685ad998f" target="_blank" rel="noopener">عرض الشهادة</a>',
+          'شهادة احترافية من IBM – <a href="https://www.credly.com/badges/924379c5-e2d9-48ad-8a89-c1a71818ff1c" target="_blank" rel="noopener">عرض الشهادة</a>'
+        ],
+        experienceTitle: "خبراتي",
+        experienceHeader: "تدربت في تقنية معلومات – البنية الرقمية",
+        experienceOrg: 'أمانة منطقة عسير – أبها، السعودية | يونيو – أغسطس 2024 – <a href="https://drive.google.com/drive/folders/1sZsEu1suHLbzWc87aJNa1PJ-C5OFAarA?usp=drive_link" target="_blank" rel="noopener">عرض شهادة التدريب</a>',
+        experienceItems: [
+          "قدمت دعم فني فعال من خلال تشخيص وحل مشكلات الأجهزة والبرمجيات.",
+          "ساعدت في إعداد الخوادم وتحسين الشبكات باستخدام منصات Makeen و Qdisk.",
+          "تعاونت مع فرق تقنية المعلومات واكتساب خبرة واقعية في بيئة الدعم الفني."
+        ],
+        projectsTitle: "مشاريعي",
+        projectHeader: 'مشروع التخرج – Agri Zone: منصة إلكترونية زراعية – <a href="https://drive.google.com/drive/folders/1Awg4Qz4o-EyDskIQMQ4urc5YpivzMlOz?usp=drive_link" target="_blank" rel="noopener">عرض الملفات</a>',
+        projectItems: [
+          "طورت و صممت منصة كاملة تربط المزارعين بالمستهلكين مباشرة.",
+          "بنيت الواجهة الأمامية (HTML, CSS, JavaScript) والخلفية (PHP, MySQL) مع تكامل قاعدة البيانات.",
+          "ادرت مهام الفريق والجدول الزمني باستخدام Project Libre.",
+          "النتيجة: حصلت على درجة ممتاز (A+, 100%)."
+        ],
+        languageSwitch: "English"  /* نص زر التبديل للغة */
+      },
+      en: { // النصوص باللغة الإنجليزية
+        name: "Mohammed Nawaf Al-Qahtani",
+        title: "Information Systems",
+        phoneText: 'Phone: <a href="tel:+966566833453">+966 56 683 3453</a>',
+whatsappText: 'WhatsApp: <a href="https://wa.me/966566833453" target="_blank" rel="noopener">+966 56 683 3453</a>',
+    linkedinText: 'LinkedIn: <a href="                    https://www.linkedin.com/authwall?trk=bf&trkInfo=AQHAleq3-U3HBAAAAZhel9q49Cf_HedkFGXCe4dFkB7lh88n_6giYdyG3lnKVD7yH4cG5RnhNCpVhWQ4YoZ1JT1XUggbVkSELUuEzCdu5JqFxxkVamE3NLgTer2IeG6iNy1mkbc=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2F%25D9%2585%25D8%25AD%25D9%2585%25D8%25AF-%25D9%2586%25D9%2588%25D8%25A7%25D9%2581-%25D8%25B3%25D8%25B9%25D8%25B1%25D8%25A7%25D9%2586-ba0aaa33a" target="_blank" rel="noopener">linkedin.com</a>',
+
+
+        emailText: 'Email: <a href="mailto:mbnq2002@gmail.com">mbnq2002@gmail.com</a>',
+        summaryTitle: "Professional Summary",
+        summaryText: "My major is Information Systems. I have practical experience in web development, IT support, and system administration. I worked on a project that connects farmers with customers, where I gained skills in teamwork and task management.",
+        educationTitle: "Education",
+        educationText: "<strong>Bachelor of Information Systems</strong><br>College of Computer Science, King Khalid University – Abha, Saudi Arabia",
+        certificationsTitle: "Certifications",
+        certifications: [
+          'IBM Data Fundamentals – <a href="https://www.credly.com/badges/6d783277-d59b-4e74-b68c-e37685ad998f" target="_blank" rel="noopener">View Certificate</a>',
+          'IBM Cybersecurity Professional Certificate – <a href="https://www.credly.com/badges/924379c5-e2d9-48ad-8a89-c1a71818ff1c" target="_blank" rel="noopener">View Certificate</a>'
+        ],
+        experienceTitle: "Experience",
+        experienceHeader: "IT Internship – Digital Infrastructure",
+        experienceOrg: 'Amanah Asir Municipality – Abha, Saudi Arabia | June – August 2024 – <a href="https://drive.google.com/drive/folders/1sZsEu1suHLbzWc87aJNa1PJ-C5OFAarA?usp=drive_link" target="_blank" rel="noopener">View Internship Certificate</a>',
+        experienceItems: [
+          "Provided effective technical support by diagnosing and resolving hardware and software issues.",
+          "Assisted in server setup and network improvement using Makeen and Qdisk platforms.",
+          "Collaborated with IT teams and gained practical experience in a support environment."
+        ],
+        projectsTitle: "Projects",
+        projectHeader: "Graduation Project – Agri Zone: Agricultural E-Commerce Platform – <a href=\"https://drive.google.com/drive/folders/1Awg4Qz4o-EyDskIQMQ4urc5YpivzMlOz?usp=drive_link\" target=\"_blank\" rel=\"noopener\">View Files</a>",
+        projectItems: [
+          "Developed and designed a complete platform connecting farmers directly with consumers.",
+          "Built the front-end (HTML, CSS, JavaScript) and back-end (PHP, MySQL) with database integration.",
+          "Managed team tasks and schedule using Project Libre.",
+          "Result: Achieved excellent grade (A+, 100%)."
+        ],
+        languageSwitch: "العربية" /* نص زر التبديل للغة */
+      }
+    };
+
+    /* دالة لتبديل اللغة الحالية */
+    function switchLanguage() {
+      const currentLang = localStorage.getItem("lang") || "ar";  // جلب اللغة المخزنة في المتصفح أو تعيين العربية كافتراضي
+      const newLang = currentLang === "ar" ? "en" : "ar";  // تبديل بين العربية والإنجليزية
+      localStorage.setItem("lang", newLang); // حفظ اللغة الجديدة في المتصفح (لتبقى بعد إعادة تحميل الصفحة)
+      location.reload(); // إعادة تحميل الصفحة لتطبيق التغيير
+    }
+
+    /* دالة لتطبيق النصوص والاتجاه حسب اللغة المختارة */
+    function applyLanguage() {
+      const lang = localStorage.getItem("lang") || "ar"; // جلب اللغة المخزنة أو افتراضيًا العربية
+      document.documentElement.lang = lang;  // تعيين خاصية lang في العنصر الجذري <html>
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr"; // تعيين اتجاه النص حسب اللغة
+
+      const t = translations[lang];  // جلب النصوص حسب اللغة المختارة
+      if (!t) return; // إذا لم توجد نصوص، لا تفعل شيء
+
+      // تحديث محتوى النصوص في الصفحة حسب اللغة
+      document.getElementById("name").textContent = t.name;
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("phone").innerHTML = t.phoneText;
+      document.getElementById("whatsapp").innerHTML = t.whatsappText;
+      document.getElementById("linkedin").innerHTML = t.linkedinText;
+      document.getElementById("email").innerHTML = t.emailText;
+
+      document.getElementById("summary-title").textContent = t.summaryTitle;
+      document.getElementById("summary-text").textContent = t.summaryText;
+
+      document.getElementById("education-title").textContent = t.educationTitle;
+      document.getElementById("education-text").innerHTML = t.educationText;
+
+      document.getElementById("certifications-title").textContent = t.certificationsTitle;
+      // تحديث قائمة الشهادات برمجياً
+      const certList = document.getElementById("certifications-list");
+      certList.innerHTML = ""; // تنظيف القائمة قبل الإضافة
+      t.certifications.forEach(cert => {
+        const li = document.createElement("li"); // إنشاء عنصر قائمة جديد
+        li.innerHTML = cert; // إضافة نص الشهادة (يشمل روابط)
+        certList.appendChild(li); // إلحاق العنصر للقائمة
+      });
+
+      document.getElementById("experience-title").textContent = t.experienceTitle;
+      document.getElementById("experience-header").textContent = t.experienceHeader;
+      document.getElementById("experience-org").innerHTML = t.experienceOrg;
+      // تحديث قائمة الخبرات برمجياً
+      const expList = document.getElementById("experience-list");
+      expList.innerHTML = ""; // تنظيف القائمة
+      t.experienceItems.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        expList.appendChild(li);
+      });
+
+      document.getElementById("projects-title").textContent = t.projectsTitle;
+      document.getElementById("project-header").innerHTML = t.projectHeader;
+      // تحديث قائمة المشاريع برمجياً
+      const projList = document.getElementById("project-list");
+      projList.innerHTML = "";
+      t.projectItems.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        projList.appendChild(li);
+      });
+
+      // تحديث نص زر تبديل اللغة لعرض اللغة الأخرى
+      document.getElementById("lang-button").textContent = t.languageSwitch;
+    }
+
+    // تنفيذ الدالة applyLanguage عند تحميل الصفحة
+    window.onload = applyLanguage;
+  </script>
+</head>
+
+<body>
+  <!-- زر التحكم بتبديل اللغة -->
+  <div class="controls">
+    <button id="lang-button" onclick="switchLanguage()">🌐</button>
+    <!-- نص الزر يتم تحديثه تلقائيًا حسب اللغة -->
+  </div>
+
+  <!-- الحاوية الرئيسية لمحتوى الصفحة -->
+  <div class="container">
+    <header>
+      <!-- صورة الملف الشخصي -->
+      <img src="profile.png" alt="صورة محمد نواف" class="profile-img">
+      <!-- الاسم -->
+      <h1 id="name">محمد نواف القحطاني</h1>
+      <!-- العنوان الوظيفي أو التخصص -->
+      <p id="title"></p>
+      <!-- معلومات التواصل -->
+      <div class="contact-info">
+        <span id="phone">الهاتف: +966 56 683 3453</span>
+        <span id="whatsapp"></span>
+        <span id="email">البريد الإلكتروني: <a href="mailto:mbnq2002@gmail.com">mbnq2002@gmail.com</a></span>
+        <span id="linkedin">LinkedIn: <a href="https://linkedin.com">linkedin.com</a></span>
+      </div>
+    </header>
+
+    <!-- قسم ملخص نبذة عن الشخص -->
+    <section>
+      <h2 id="summary-title">نبذة احترافية | Professional Summary</h2>
+      <p id="summary-text"></p>
+    </section>
+
+    <!-- قسم التعليم -->
+    <section>
+      <h2 id="education-title">التعليم | Education</h2>
+      <p id="education-text"></p>
+    </section>
+
+    <!-- قسم الشهادات -->
+    <section>
+      <h2 id="certifications-title">الشهادات | Certifications</h2>
+      <ul id="certifications-list"></ul>
+    </section>
+
+    <!-- قسم الخبرات العملية -->
+    <section>
+      <h2 id="experience-title">الخبرات | Experience</h2>
+      <p><strong id="experience-header"></strong><br><span id="experience-org"></span></p>
+      <ul id="experience-list"></ul>
+    </section>
+
+    <!-- قسم المشاريع -->
+    <section>
+      <h2 id="projects-title">المشاريع | Projects</h2>
+      <p><strong id="project-header"></strong></p>
+      <ul id="project-list"></ul>
+    </section>
+  </div>
+</body>
+</html>

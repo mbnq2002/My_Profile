@@ -1,0 +1,201 @@
+/* إعدادات أساسية للجسم */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-image: url("2.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: #eaeaea;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* تطبيق الحركة على الأقسام والعنوان */
+.container, header, section {
+  animation: fadeInUp 1.2s ease-in-out forwards;
+  opacity: 0; /* البداية شفافة */
+}
+
+/* تعريف حركة الانزلاق من الأسفل */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* الحاوية الرئيسية */
+.container {
+  max-width: 960px;
+  margin: 50px auto;
+  padding: 25px 30px;
+  background-color: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff;
+  transition: background-color 0.5s ease;
+}
+
+/* عناصر القائمة */
+li {
+  margin-bottom: 12px;
+  color: #ffffff;
+  transition: color 0.4s ease, transform 0.3s ease;
+}
+
+/* رأس الصفحة */
+header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+/* عنوان الاسم */
+header h1 {
+  margin-bottom: 6px;
+  font-size: 34px;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+/* الوصف الصغير تحت الاسم */
+header p {
+  color: #cccccc;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* صورة الملف الشخصي */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #222222;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+}
+
+/* تأثير عند تمرير الماوس على الصورة */
+.profile-img:hover {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+}
+
+/* زر التحكم في اللغة */
+.controls {
+  position: fixed; /* ثابتة عند التمرير */
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+}
+
+/* تصميم الزر */
+.controls button {
+  font-size: 16px;
+  background-color: #ffbb00;
+
+  border: none;
+  border-radius: 10px;
+  padding: 8px 18px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.25s ease;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  user-select: none;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* تأثير عند المرور على الزر */
+.controls button:hover {
+  background-color: #ff9900;
+  color: #000000;
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(33, 33, 33, 0.7);
+}
+
+/* العناوين */
+h2 {
+  position: relative;
+  color: #ffdd88;
+  border-bottom: 2px solid #ffbb00;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: color 0.4s ease;
+}
+
+/* الخط المتحرك تحت العنوان */
+h2::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: #ffbb00;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.35s ease;
+  border-radius: 3px;
+}
+
+/* توسعة الخط عند المرور على العنوان */
+h2:hover::after {
+  width: 100px;
+}
+
+/* قائمة الفقرات */
+ul {
+  list-style-type: disc;
+  padding-left: 25px;
+}
+
+/* تأثير عند المرور على عناصر القائمة */
+ul li:hover {
+  color: #ffdd88;
+  transform: translateX(10px);
+}
+
+/* تأثير عند مرور الماوس على أي قسم */
+section:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: background-color 0.5s ease;
+  border-radius:5px
+  padding: 15px 20px;
+}
+
+/* معلومات التواصل */
+.contact-info {
+  font-size: 14px;
+  color: #f0f0f0;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* كل معلومة على سطر */
+.contact-info span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* الروابط */
+a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.35s ease;
+}
+
+/* تأثير عند المرور على الرابط */
+a:hover {
+  text-decoration: underline;
+  color: #ffdd55;
+}
