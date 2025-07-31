@@ -1,8 +1,13 @@
-/* استيراد الخط العربي والإنجليزي */
+/* استيراد الخط العربي */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
-/* إعدادات أساسية للجسم */
+/* الخط الافتراضي والتنسيق العام */
+* {
+  font-family: 'Cairo', sans-serif;
+  box-sizing: border-box;
+}
 
+/* إعدادات الجسم */
 body {
   margin: 0;
   padding: 0;
@@ -12,14 +17,15 @@ body {
   background-position: center;
   color: #eaeaea;
   transition: background-color 0.5s ease, color 0.5s ease;
-}
-/* تطبيق الحركة على الأقسام والعنوان */
-.container, header, section {
-  animation: fadeInUp 1.2s ease-in-out forwards;
-  opacity: 0; /* البداية شفافة */
+  scroll-behavior: smooth;
 }
 
-/* تعريف حركة الانزلاق من الأسفل */
+/* حركة ظهور ناعمة */
+.container, header, section {
+  animation: fadeInUp 1.2s ease-in-out forwards;
+  opacity: 0;
+}
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -31,11 +37,11 @@ body {
   }
 }
 
-/* حاوية الصفحة */
+/* الحاوية الرئيسية */
 .container {
   max-width: 900px;
   margin: auto;
-  padding: 2rem;
+  padding: clamp(1rem, 5vw, 2rem);
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -54,27 +60,43 @@ body {
   margin: 0 auto 1rem;
   border: 3px solid #fff;
   box-shadow: 0 0 10px #000;
-  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  transition: transform 0.5s ease, box-shadow 0.4s ease, opacity 0.6s ease;
+  opacity: 0;
+  animation: fadeInProfile 1.2s ease-in-out forwards;
 }
 
-/* تأثير عند تمرير الماوس على الصورة */
+@keyframes fadeInProfile {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .profile-img:hover {
   transform: scale(1.08) rotate(2deg);
   box-shadow: 0 8px 16px rgba(0,0,0,0.8);
 }
 
-/* اسم المستخدم */
+/* العناوين الأساسية */
 h1 {
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: bold;
   text-align: center;
   margin-bottom: 0.5rem;
+  transition: color 0.4s ease;
 }
 
-/* التخصص */
+h1:hover {
+  color: #ffd700;
+}
+
 #title {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.3rem);
   margin-bottom: 1rem;
   color: #ccc;
 }
@@ -86,8 +108,8 @@ h1 {
   align-items: center;
   gap: 0.3rem;
   margin-bottom: 2rem;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  line-height: 1.8;
 }
 
 .contact-info a {
@@ -101,9 +123,9 @@ h1 {
   color: #ffdd55;
 }
 
-/* العناوين */
+/* عناوين الأقسام */
 section h2 {
-  font-size: 1.4rem;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
   margin-top: 2rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid #fff3;
@@ -111,11 +133,10 @@ section h2 {
   color: #ffdd88;
   font-weight: 700;
   letter-spacing: 0.02em;
-  transition: color 0.4s ease;
   position: relative;
+  transition: color 0.4s ease;
 }
 
-/* الخط المتحرك تحت العنوان */
 section h2::after {
   content: '';
   position: absolute;
@@ -128,7 +149,6 @@ section h2::after {
   border-radius: 3px;
 }
 
-/* توسعة الخط عند المرور على العنوان */
 section h2:hover::after {
   width: 100px;
 }
@@ -141,38 +161,36 @@ ul {
 
 ul li {
   margin-bottom: 0.5rem;
-  line-height: 1.6;
+  line-height: 1.8;
   color: #fff;
   transition: color 0.4s ease, transform 0.3s ease;
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
 }
 
-/* تأثير عند المرور على عناصر القائمة */
 ul li:hover {
   color: #ffdd88;
   transform: translateX(10px);
 }
 
-/* تأثير عند مرور الماوس على أي قسم */
+/* تأثير على القسم */
 section:hover {
   background-color: rgba(255, 255, 255, 0.08);
-  transition: background-color 0.5s ease;
   border-radius: 5px;
   padding: 15px 20px;
+  transition: background-color 0.5s ease;
 }
 
-/* زر التحكم في اللغة */
+/* زر تغيير اللغة */
 .controls {
-  position: fixed; /* ثابتة عند التمرير */
+  position: fixed;
   top: 15px;
   left: 15px;
   z-index: 1000;
 }
 
-/* تصميم الزر */
 .controls button {
   font-size: 16px;
   background-color: #ffbb00;
-
   border: none;
   border-radius: 10px;
   padding: 8px 18px;
@@ -186,7 +204,6 @@ section:hover {
   text-align: center;
 }
 
-/* تأثير عند المرور على الزر */
 .controls button:hover {
   background-color: #ff9900;
   color: #000000;
@@ -194,80 +211,20 @@ section:hover {
   box-shadow: 0 6px 14px rgba(33, 33, 33, 0.7);
 }
 
-/* استجابة كاملة للشاشات */
+/* شاشات متوسطة وصغيرة */
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
   }
 
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  section h2 {
-    font-size: 1.2rem;
-  }
-
-  #title {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-
-  h1 {
-    font-size: 2rem; /* زيادة من 1.6 إلى 2rem */
-  }
-
-  section h2 {
-    font-size: 1.5rem; /* زيادة من 1.2 إلى 1.5rem */
-  }
-
-  #title {
-    font-size: 1.2rem; /* زيادة من 1 إلى 1.2rem */
-  }
-
-  ul li {
-    font-size: 1.1rem; /* زيادة حجم الخط للعناصر في القوائم */
-    line-height: 1.8; /* زيادة ارتفاع السطر لتحسين القراءة */
-  }
-
+  ul li,
   .contact-info {
-    font-size: 1.1rem; /* زيادة حجم نص معلومات التواصل */
+    font-size: 1.1rem;
+    line-height: 1.8;
   }
 }
-/* الخطوط الرئيسية باستخدام clamp للمرونة */
-h1 {
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
-}
 
-section h2 {
-  font-size: clamp(1.3rem, 4vw, 1.8rem);
-}
-
-#title {
-  font-size: clamp(1rem, 3vw, 1.3rem);
-}
-
-ul li,
-.contact-info {
-  font-size: clamp(1rem, 2.8vw, 1.2rem);
-  line-height: 1.8;
-}
-
-/* الحاوية تستجيب حسب الشاشة */
-.container {
-  padding: clamp(1rem, 5vw, 2rem);
-}
-
-/* لجعل كل النصوص تعمل بنعومة */
-html {
-  scroll-behavior: smooth;
-}
-
-/* تكيف إضافي للشاشات الصغيرة جدًا */
+/* شاشات صغيرة جدًا */
 @media (max-width: 480px) {
   .container {
     padding: 1rem;
