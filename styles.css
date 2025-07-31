@@ -1,6 +1,9 @@
+/* استيراد الخط العربي والإنجليزي */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
 /* إعدادات أساسية للجسم */
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -10,7 +13,6 @@ body {
   color: #eaeaea;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
-
 /* تطبيق الحركة على الأقسام والعنوان */
 .container, header, section {
   animation: fadeInUp 1.2s ease-in-out forwards;
@@ -29,57 +31,29 @@ body {
   }
 }
 
-/* الحاوية الرئيسية */
+/* حاوية الصفحة */
 .container {
-  max-width: 960px;
-  margin: 50px auto;
-  padding: 25px 30px;
-  background-color: rgba(0, 0, 0, 0.65);
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  border-radius: 12px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #ffffff;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  color: #fff;
   transition: background-color 0.5s ease;
 }
 
-/* عناصر القائمة */
-li {
-  margin-bottom: 12px;
-  color: #ffffff;
-  transition: color 0.4s ease, transform 0.3s ease;
-}
-
-/* رأس الصفحة */
-header {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-/* عنوان الاسم */
-header h1 {
-  margin-bottom: 6px;
-  font-size: 34px;
-  color: #ffffff;
-  letter-spacing: 0.04em;
-}
-
-/* الوصف الصغير تحت الاسم */
-header p {
-  color: #cccccc;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-/* صورة الملف الشخصي */
+/* الصورة الشخصية */
 .profile-img {
-  width: 150px;
-  height: 150px;
+  display: block;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 15px;
-  border: 3px solid #222222;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  margin: 0 auto 1rem;
+  border: 3px solid #fff;
+  box-shadow: 0 0 10px #000;
   transition: transform 0.5s ease, box-shadow 0.4s ease;
 }
 
@@ -87,6 +61,103 @@ header p {
 .profile-img:hover {
   transform: scale(1.08) rotate(2deg);
   box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+}
+
+/* اسم المستخدم */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* التخصص */
+#title {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+/* معلومات التواصل */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 2rem;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contact-info a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.35s ease;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+  color: #ffdd55;
+}
+
+/* العناوين */
+section h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #fff3;
+  padding-bottom: 0.4rem;
+  color: #ffdd88;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: color 0.4s ease;
+  position: relative;
+}
+
+/* الخط المتحرك تحت العنوان */
+section h2::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: #ffbb00;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.35s ease;
+  border-radius: 3px;
+}
+
+/* توسعة الخط عند المرور على العنوان */
+section h2:hover::after {
+  width: 100px;
+}
+
+/* القوائم */
+ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #fff;
+  transition: color 0.4s ease, transform 0.3s ease;
+}
+
+/* تأثير عند المرور على عناصر القائمة */
+ul li:hover {
+  color: #ffdd88;
+  transform: translateX(10px);
+}
+
+/* تأثير عند مرور الماوس على أي قسم */
+section:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: background-color 0.5s ease;
+  border-radius: 5px;
+  padding: 15px 20px;
 }
 
 /* زر التحكم في اللغة */
@@ -123,79 +194,82 @@ header p {
   box-shadow: 0 6px 14px rgba(33, 33, 33, 0.7);
 }
 
-/* العناوين */
-h2 {
-  position: relative;
-  color: #ffdd88;
-  border-bottom: 2px solid #ffbb00;
-  padding-bottom: 6px;
-  margin-bottom: 20px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  transition: color 0.4s ease;
+/* استجابة كاملة للشاشات */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  section h2 {
+    font-size: 1.2rem;
+  }
+
+  #title {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem; /* زيادة من 1.6 إلى 2rem */
+  }
+
+  section h2 {
+    font-size: 1.5rem; /* زيادة من 1.2 إلى 1.5rem */
+  }
+
+  #title {
+    font-size: 1.2rem; /* زيادة من 1 إلى 1.2rem */
+  }
+
+  ul li {
+    font-size: 1.1rem; /* زيادة حجم الخط للعناصر في القوائم */
+    line-height: 1.8; /* زيادة ارتفاع السطر لتحسين القراءة */
+  }
+
+  .contact-info {
+    font-size: 1.1rem; /* زيادة حجم نص معلومات التواصل */
+  }
+}
+/* الخطوط الرئيسية باستخدام clamp للمرونة */
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
 }
 
-/* الخط المتحرك تحت العنوان */
-h2::after {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  background: #ffbb00;
-  left: 0;
-  bottom: -6px;
-  transition: width 0.35s ease;
-  border-radius: 3px;
+section h2 {
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
 }
 
-/* توسعة الخط عند المرور على العنوان */
-h2:hover::after {
-  width: 100px;
+#title {
+  font-size: clamp(1rem, 3vw, 1.3rem);
 }
 
-/* قائمة الفقرات */
-ul {
-  list-style-type: disc;
-  padding-left: 25px;
-}
-
-/* تأثير عند المرور على عناصر القائمة */
-ul li:hover {
-  color: #ffdd88;
-  transform: translateX(10px);
-}
-
-/* تأثير عند مرور الماوس على أي قسم */
-section:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  transition: background-color 0.5s ease;
-  border-radius:5px
-  padding: 15px 20px;
-}
-
-/* معلومات التواصل */
+ul li,
 .contact-info {
-  font-size: 14px;
-  color: #f0f0f0;
-  margin-top: 10px;
-  line-height: 1.5;
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  line-height: 1.8;
 }
 
-/* كل معلومة على سطر */
-.contact-info span {
-  display: block;
-  margin-bottom: 5px;
+/* الحاوية تستجيب حسب الشاشة */
+.container {
+  padding: clamp(1rem, 5vw, 2rem);
 }
 
-/* الروابط */
-a {
-  color: #ffcc00;
-  text-decoration: none;
-  transition: color 0.35s ease;
+/* لجعل كل النصوص تعمل بنعومة */
+html {
+  scroll-behavior: smooth;
 }
 
-/* تأثير عند المرور على الرابط */
-a:hover {
-  text-decoration: underline;
-  color: #ffdd55;
+/* تكيف إضافي للشاشات الصغيرة جدًا */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
 }
