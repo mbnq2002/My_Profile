@@ -4,6 +4,8 @@
 <!-- بدء وثيقة HTML مع تحديد اللغة (العربية) واتجاه النص من اليمين لليسار -->
 
 <head>
+  <!-- Bootstrap RTL -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <meta charset="UTF-8" />
   <!-- تحديد ترميز الصفحة لتكون UTF-8 لدعم الأحرف العربية -->
 
@@ -29,66 +31,70 @@ linkedinText: 'لينكد إن:  <a href=" http://www.linkedin.com/in/%D9%85%D8%
 
         emailText: 'البريد الإلكتروني: <a href="mailto:mbnq2002@gmail.com">mbnq2002@gmail.com</a>',
         summaryTitle: "نبذة عني",
-        summaryText: "تخصصي نظم المعلومات، ولدي خبرة عملية في تطوير الويب، والدعم الفني، وإدارة الأنظمة. عملت على مشروع يربط المزارعين بالعملاء، واكتسبت من خلاله مهارات في العمل الجماعي وتنظيم المهام.",
+        summaryText: "حاصل على بكالوريوس في نظم المعلومات، وأتمتع بخبرة عملية في تطوير الويب، والدعم الفني، وإدارة الأنظمة. شاركت في مشروع ابتكاري يربط بين المزارعين والعملاء بشكل مباشر، مما مكنني من تطوير مهارات فعّالة في العمل الجماعي، وتنظيم المهام، وحل المشكلات التقنية. أسعى دائمًا لتطوير قدراتي وتحقيق أفضل النتائج في بيئات العمل التعاونية والتقنية المتقدمة.",
         educationTitle: "تعليمي",
-        educationText: "<strong>بكالوريوس نظم معلومات</strong><br>كلية علوم الحاسب، جامعة الملك خالد – أبها، السعودية",
+educationText: "حاصل على بكالوريوس نظم معلومات من كلية علوم الحاسب بجامعة الملك خالد بأبها.", 
         certificationsTitle: "شهاداتي والدورات",
         certifications: [
           'اساسيات البيانات من IBM – <a href="https://www.credly.com/badges/6d783277-d59b-4e74-b68c-e37685ad998f" target="_blank" rel="noopener">عرض الشهادة</a>',
-          'شهادة احترافية من IBM – <a href="https://www.credly.com/badges/924379c5-e2d9-48ad-8a89-c1a71818ff1c" target="_blank" rel="noopener">عرض الشهادة</a>'
+          'شهادة احترافية في الأمن السبراني من IBM – <a href="https://www.credly.com/badges/924379c5-e2d9-48ad-8a89-c1a71818ff1c" target="_blank" rel="noopener">عرض الشهادة</a>'
         ],
         experienceTitle: "خبراتي",
-        experienceHeader: "تدربت في تقنية معلومات – البنية الرقمية",
-        experienceOrg: 'أمانة منطقة عسير – أبها، السعودية | يونيو – أغسطس 2024 – <a href="https://drive.google.com/drive/folders/1sZsEu1suHLbzWc87aJNa1PJ-C5OFAarA?usp=drive_link" target="_blank" rel="noopener">عرض شهادة التدريب</a>',
-        experienceItems: [
-          "قدمت دعم فني فعال من خلال تشخيص وحل مشكلات الأجهزة والبرمجيات.",
-          "ساعدت في إعداد الخوادم وتحسين الشبكات باستخدام منصات Makeen و Qdisk.",
-          "تعاونت مع فرق تقنية المعلومات واكتساب خبرة واقعية في بيئة الدعم الفني."
-        ],
+experienceHeader: 'تدربت في قسم تقنية المعلومات بالبنية الرقمية بأمانة منطقة عسير - <a href="https://drive.google.com/drive/folders/1sZsEu1suHLbzWc87aJNa1PJ-C5OFAarA?usp=drive_link" target="_blank" rel="noopener">عرض شهادة التدريب</a>',
+experienceOrg: '',  // يمكنك تركها فارغة إذا لا تريد نص إضافي أو تضع وصفًا آخر هنا
+
+experienceItems: [
+  "قدمت دعم فني من خلال تشخيص وحل مشكلات الأجهزة والبرمجيات.",
+  "ساعدت في إعداد الخوادم وتحسين الشبكات باستخدام منصات Makeen و Qdisk.",
+  "تعاونت مع فرق تقنية المعلومات واكتسبت خبرة في بيئة الدعم الفني."
+],
+
         projectsTitle: "مشاريعي",
         projectHeader: 'مشروع التخرج – Agri Zone: منصة إلكترونية زراعية – <a href="https://drive.google.com/drive/folders/1Awg4Qz4o-EyDskIQMQ4urc5YpivzMlOz?usp=drive_link" target="_blank" rel="noopener">عرض الملفات</a>',
         projectItems: [
           "طورت و صممت منصة كاملة تربط المزارعين بالمستهلكين مباشرة.",
           "بنيت الواجهة الأمامية (HTML, CSS, JavaScript) والخلفية (PHP, MySQL) مع تكامل قاعدة البيانات.",
-          "ادرت مهام الفريق والجدول الزمني باستخدام Project Libre.",
-          "النتيجة: حصلت على درجة ممتاز (A+, 100%)."
+         "أدرت مهام الفريق وتنظيم الجدول الزمني باستخدام Project Libre.",
+          "النتيجة: حصلت على درجة ممتاز (A+, 100%).",
         ],
         languageSwitch: "English"  /* نص زر التبديل للغة */
       },
       en: { // النصوص باللغة الإنجليزية
-        name: "Mohammed Nawaf Al-Qahtani",
-        title: "Information Systems",
-        phoneText: 'Phone: <a href="tel:+966566833453">+966 56 683 3453</a>',
-whatsappText: 'WhatsApp: <a href="https://wa.me/966566833453" target="_blank" rel="noopener">+966 56 683 3453</a>',
-    linkedinText: 'LinkedIn: <a href="                    https://www.linkedin.com/authwall?trk=bf&trkInfo=AQHAleq3-U3HBAAAAZhel9q49Cf_HedkFGXCe4dFkB7lh88n_6giYdyG3lnKVD7yH4cG5RnhNCpVhWQ4YoZ1JT1XUggbVkSELUuEzCdu5JqFxxkVamE3NLgTer2IeG6iNy1mkbc=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2F%25D9%2585%25D8%25AD%25D9%2585%25D8%25AF-%25D9%2586%25D9%2588%25D8%25A7%25D9%2581-%25D8%25B3%25D8%25B9%25D8%25B1%25D8%25A7%25D9%2586-ba0aaa33a" target="_blank" rel="noopener">linkedin.com</a>',
-
+       name: "Mohammed Nawaf Al-Qahtani",
+title: "Information Systems",
+phoneText: 'Phone: <a href="tel:+966566833453">+966 566 833 453</a>',
+whatsappText: 'WhatsApp: <a href="https://wa.me/966566833453" target="_blank" rel="noopener">+966 566 833 453</a>',
+linkedinText: 'LinkedIn: <a href="https://www.linkedin.com/in/%D9%85%D8%AD%D9%85%D8%AF-%D9%86%D9%88%D8%A7%D9%81-%D8%B3%D8%B9%D8%B1%D8%A7%D9%86-ba0aaa33a/" target="_blank" rel="noopener">linkedin.com/in/mohammed</a>',
 
         emailText: 'Email: <a href="mailto:mbnq2002@gmail.com">mbnq2002@gmail.com</a>',
-        summaryTitle: "Professional Summary",
-        summaryText: "My major is Information Systems. I have practical experience in web development, IT support, and system administration. I worked on a project that connects farmers with customers, where I gained skills in teamwork and task management.",
-        educationTitle: "Education",
-        educationText: "<strong>Bachelor of Information Systems</strong><br>College of Computer Science, King Khalid University – Abha, Saudi Arabia",
-        certificationsTitle: "Certifications",
-        certifications: [
-          'IBM Data Fundamentals – <a href="https://www.credly.com/badges/6d783277-d59b-4e74-b68c-e37685ad998f" target="_blank" rel="noopener">View Certificate</a>',
-          'IBM Cybersecurity Professional Certificate – <a href="https://www.credly.com/badges/924379c5-e2d9-48ad-8a89-c1a71818ff1c" target="_blank" rel="noopener">View Certificate</a>'
-        ],
-        experienceTitle: "Experience",
-        experienceHeader: "IT Internship – Digital Infrastructure",
-        experienceOrg: 'Amanah Asir Municipality – Abha, Saudi Arabia | June – August 2024 – <a href="https://drive.google.com/drive/folders/1sZsEu1suHLbzWc87aJNa1PJ-C5OFAarA?usp=drive_link" target="_blank" rel="noopener">View Internship Certificate</a>',
-        experienceItems: [
-          "Provided effective technical support by diagnosing and resolving hardware and software issues.",
-          "Assisted in server setup and network improvement using Makeen and Qdisk platforms.",
-          "Collaborated with IT teams and gained practical experience in a support environment."
-        ],
-        projectsTitle: "Projects",
-        projectHeader: "Graduation Project – Agri Zone: Agricultural E-Commerce Platform – <a href=\"https://drive.google.com/drive/folders/1Awg4Qz4o-EyDskIQMQ4urc5YpivzMlOz?usp=drive_link\" target=\"_blank\" rel=\"noopener\">View Files</a>",
-        projectItems: [
-          "Developed and designed a complete platform connecting farmers directly with consumers.",
-          "Built the front-end (HTML, CSS, JavaScript) and back-end (PHP, MySQL) with database integration.",
-          "Managed team tasks and schedule using Project Libre.",
-          "Result: Achieved excellent grade (A+, 100%)."
-        ],
+summaryTitle: "About Me",
+summaryText: "I hold a Bachelor's degree in Information Systems and have hands-on experience in web development, IT support, and system administration. I participated in an innovative project connecting farmers directly with customers, which enabled me to develop effective teamwork, task organization, and technical problem-solving skills. I always strive to improve my capabilities and achieve the best results in collaborative and advanced technical environments.",
+educationTitle: "Education",
+educationText: "<strong>Bachelor’s degree in Information Systems</strong><br>College of Computer Science, King Khalid University in Abha.",
+certificationsTitle: "Certifications and Courses",
+certifications: [
+  'IBM Data Fundamentals – <a href="https://www.credly.com/badges/6d783277-d59b-4e74-b68c-e37685ad998f" target="_blank" rel="noopener">View Certificate</a>',
+  'IBM Cybersecurity Professional Certificate – <a href="https://www.credly.com/badges/924379c5-e2d9-48ad-8a89-c1a71818ff1c" target="_blank" rel="noopener">View Certificate</a>'
+],
+experienceTitle: "Experience",
+experienceHeader: "IT Internship in the Digital Infrastructure department at Amanah Asir Municipality",
+experienceOrg: '<a href="https://drive.google.com/drive/folders/1sZsEu1suHLbzWc87aJNa1PJ-C5OFAarA?usp=drive_link" target="_blank" rel="noopener">View Internship Certificate</a>',
+experienceItems: [
+  "Provided technical support by diagnosing and resolving hardware and software issues.",
+  "Assisted in setting up servers and improving networks using Makeen and Qdisk platforms.",
+  "Collaborated with IT teams and gained practical experience working in a support environment."
+],
+projectsTitle: "Projects",
+projectHeader: "Graduation Project – Agri Zone: Agricultural E-Commerce Platform – <a href=\"https://drive.google.com/drive/folders/1Awg4Qz4o-EyDskIQMQ4urc5YpivzMlOz?usp=drive_link\" target=\"_blank\" rel=\"noopener\">View Files</a>",
+projectItems: [
+  "Developed and designed a comprehensive platform that connects farmers directly with consumers.",
+  "Built both front-end (HTML, CSS, JavaScript) and back-end (PHP, MySQL) with full database integration.",
+  "Managed team tasks and organized the project schedule using Project Libre.",
+  "Result: Achieved an excellent grade (A+, 100%)."
+],
+
+
+
         languageSwitch: "العربية" /* نص زر التبديل للغة */
       }
     };
@@ -135,7 +141,7 @@ whatsappText: 'WhatsApp: <a href="https://wa.me/966566833453" target="_blank" re
       });
 
       document.getElementById("experience-title").textContent = t.experienceTitle;
-      document.getElementById("experience-header").textContent = t.experienceHeader;
+document.getElementById("experience-header").innerHTML = translations[lang].experienceHeader;
       document.getElementById("experience-org").innerHTML = t.experienceOrg;
       // تحديث قائمة الخبرات برمجياً
       const expList = document.getElementById("experience-list");
