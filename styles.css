@@ -20,6 +20,17 @@ body {
   scroll-behavior: smooth;
 }
 
+/* اتجاه الصفحة حسب اللغة */
+html[lang="ar"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[lang="en"] {
+  direction: ltr;
+  text-align: left;
+}
+
 /* حركة ظهور ناعمة */
 .container, header, section {
   animation: fadeInUp 1.2s ease-in-out forwards;
@@ -42,7 +53,7 @@ body {
   max-width: 900px;
   margin: auto;
   padding: clamp(1rem, 5vw, 2rem);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.765);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
@@ -137,13 +148,23 @@ section h2 {
   transition: color 0.4s ease;
 }
 
+/* ضبط خط التسطير السفلي حسب اتجاه اللغة */
+html[lang="ar"] section h2::after {
+  right: 0;
+  left: auto;
+}
+
+html[lang="en"] section h2::after {
+  left: 0;
+  right: auto;
+}
+
 section h2::after {
   content: '';
   position: absolute;
   width: 50px;
   height: 3px;
   background: #ffbb00;
-  left: 0;
   bottom: -6px;
   transition: width 0.35s ease;
   border-radius: 3px;
@@ -155,7 +176,7 @@ section h2:hover::after {
 
 /* القوائم */
 ul {
-  padding-left: 1.2rem;
+  padding-right: 1.2rem;
   list-style-type: disc;
 }
 
@@ -167,7 +188,13 @@ ul li {
   font-size: clamp(1rem, 2.8vw, 1.2rem);
 }
 
-ul li:hover {
+/* تحريك عنصر القائمة نحو اليسار في العربي، واليمين في الإنجليزي */
+html[lang="ar"] ul li:hover {
+  color: #ffdd88;
+  transform: translateX(-10px);
+}
+
+html[lang="en"] ul li:hover {
   color: #ffdd88;
   transform: translateX(10px);
 }
@@ -184,13 +211,14 @@ section:hover {
 .controls {
   position: fixed;
   top: 15px;
-  left: 15px;
+  right: 15px;
+  left: auto;
   z-index: 1000;
 }
 
 .controls button {
   font-size: 16px;
-  background-color: #ffbb00;
+  background-color: #ffffff93;
   border: none;
   border-radius: 10px;
   padding: 8px 18px;
